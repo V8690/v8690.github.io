@@ -5,7 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- 浏览器标签上显示的网站标题 -->
-    <title>还在说话,全部错误</title>
+<!--网站标题自动判断-->
+<script>
+	var title = document.title;
+        function istitle() {
+	     var isHidden = document.hidden;	
+	      if (isHidden) {
+		//当窗口不可见
+		document.title = '(つ ェ ⊂)我藏好了哦~|全部正确のBlog';
+	      } else {
+		//当窗口可见
+		document.title = '(*゜ロ゜)ノ被发现了~|全部正确のBlog';
+		setTimeout("document.title=title", 3000);
+	      }
+	    };
+	document.addEventListener('visibilitychange', istitle);
+</script>
     <!-- 网站介绍 -->
     <meta name="description" content="全部正确的网站">
     <!-- 网站关键字 -->
